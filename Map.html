@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+   
+}
+
+.map-container {
+    flex: 1;
+    min-width: 400px;
+    height: 700px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #40d9ac;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+ h2 span {
+    color:#6DE1C2;
+}
+
+.highlight {
+    color: #40d9ac;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    font-family: Monserrat;
+    line-height: 24px;
+}
+p.mobile,
+p.desktop {
+     display:none;
+}
+
+@media screen and (min-width: 768px)  {
+ 
+    .contact  {
+        margin: 50px auto;
+        padding: 50px 95px;
+        border-radius: 50px;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 65px;
+    }}
+    
+    .left {
+        width: calc(48% - 65%);
+    }
+    .right {
+        width: 52%;
+        max-width: 638%;
+    }
+    p.desktop {
+        display: block;
+    }
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 50px;
+}
+
+.city-postcode {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-postcode div {
+    width: 48%;
+}
+
+.file-upload-label {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #40d9ac;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info p {
+    margin: 10px;
+}
+.contact details strong {
+    display:block;
+    color: black;
+    text-transform: uppercase;
+}
+.contact-info a {
+
+    color: #DD5471;
+    text-decoration: none;
+}
+.content-details li {
+    background: url(../image/icon1.svg) no-repeat center left;
+    padding-left: 43px;
+}  
+
+.contact-info a:hover {
+    text-decoration: underline;
+
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Get in <span class="highlight">touch</span></h1>
+            <p>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
+            <form>
+                <input type="text" id="contact-name" name="contact-name" placeholder="Contact name">
+                
+                <label for="street"></label>
+                <input type="text" id="street" name="street" placeholder="street">
+                
+                <div class="city-postcode">
+                    <div>
+                        <label for="city"></label>
+                        <input type="text" id="city" name="city" placeholder="text">
+                    </div>
+                    <div>
+                        <label for="postcode"></label>
+                        <input type="text" id="postcode" name="postcode" placeholder="postcode">
+                    </div>
+                </div>
+                
+                <label for="contact-phone"></label>
+                <input type="text" id="contact-phone" name="contact-phone" placeholder="Contact Phone">
+                
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="E-mail">
+                
+                <label for="idea">Let's talk about your idea</label>
+                <textarea id="idea" name="idea"></textarea>
+                
+                <label for="file-upload" class="file-upload-label">
+                    
+                    <input type="file" id="file-upload" name="file-upload">
+                </label>
+                <label for="nda">
+                    <input type="checkbox" id="nda" name="nda">
+                    I want to protect my data by signing an NDA
+                </label>
+                
+                <button type="submit">SUBMIT</button>
+            </form>
+            
+            <div class="contact-info">
+                <p><strong>Phone:</strong> 11 111 111</p>
+                <p><strong>E-MAIL:</strong> info@company.com</p>
+                <p><strong>HELPDESK:</strong> <a href="https://helpdesk.com">https://helpdesk.com</a></p>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.320858517283!2d14.4119475157169!3d50.08146527942605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94ebf0f774fb%3A0x7f31885b0bfb1fd9!2sCharles%20Bridge!5e0!3m2!1sen!2sus!4v1597358183024!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>
